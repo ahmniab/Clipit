@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "proglib.h": "c",
+        "raylib.h": "c"
+    }
+}
