@@ -1,15 +1,6 @@
 #!/bin/bash
-# $ccPath='/C/raylib/w64devkit/bin/gcc'
-# $CFLAGS='/C/raylib/raylib/src/raylib.rc.data -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -Iexternal -DPLATFORM_DESKTOP'
-# $LDFLAGS='-lraylib -lopengl32 -lgdi32 -lwinmm'
-# gcc -o main.exe main.c -I raylib/include -L raylib/lib -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows -Wl,--subsystem,windows -Wl,-Bstatic -lraylib -Wl,-Bdynamic main.rc -Wl,-lwinmm -Wl,-lgdi32 -Wl,-lopengl32 -Wl,-lgdiplus -Wl,-lole32 -Wl,-lssleay32 -Wl,-llibssl32 -lws2_32 -Wl,-Bstatic -Wl,--start-group -lstdc++ -lpthread -lm -Wl,--end-group -static-libgcc -static-libstdc++ -Wl,-Bdynamic -lglfw3 -lgdi32 -lopengl32 -lgdiplus -lwinmm -Wl,-Bstatic -lmsimg32 -Wl,-Bdynamic YourApp.ico
-
-# /C/raylib/w64devkit/bin/gcc -o ../out/test.exe test.c proglib.c /C/raylib/raylib/src/raylib.rc.data -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
-# ../out/test
-
-/C/raylib/w64devkit/bin/gcc.exe -o ../out/clipit.exe main.c proglib.c /C/raylib/raylib/src/raylib.rc.data -s -static -Os -std=c99 -Wall -I/C/raylib/raylib/src -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm -mwindows
-../out/main
-
-# cmd ver
-# C:/raylib/w64devkit/bin/gcc.exe -o ../out/main.exe main.c proglib.c C:/raylib/raylib/src/raylib.rc.data -s -static -Os -std=c99 -Wall -IC:raylib/raylib/src -Iexternal -DPLATFORM_DESKTOP -lraylib -lopengl32 -lgdi32 -lwinmm #-mwindows
-# ../out/main
+rm ../out/Clipit
+cc -o ../out/Clipit main.c proglib.c -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
+cd ../out/
+./Clipit
+cd ../src/

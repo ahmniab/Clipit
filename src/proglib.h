@@ -11,7 +11,7 @@ typedef struct
     Color color;
 }Shape;
 
-void center_x(Shape *shape);
+void center_x(Shape *shape , unsigned int width);
 
 void center_text(   
         
@@ -19,12 +19,21 @@ void center_text(
         Shape * shapInfo ,
         Font font ,
         float font_size ,
-        float spacing
+        float spacing ,
+        unsigned int height ,
+        unsigned int width 
+        
 
     );
 
-void handle_ctrl(Vector2 *win);
 bool IsMouseInsideRect(int x, int y, int width, int height);
-void get_saved_pos(Vector2 * win);
-void drawMainLayout(Texture2D icon , Font titleFont);
+
+#ifdef WIN_V
+    void handle_ctrl(Vector2 *win);
+    void get_saved_pos(Vector2 * win);
+    void drawMainLayout(Texture2D icon , Font titleFont);
+#else
+    void drawMainLayout( Font titleFont);
+#endif
+
 bool close_button(Texture2D xTexture);
